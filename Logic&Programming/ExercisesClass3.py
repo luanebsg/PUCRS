@@ -61,17 +61,17 @@ value1 = int(input('Enter the first value:'))
 value2 = int(input('Enter the second value:'))
 value3 = int(input('Enter the third value:'))
 
-higher = value1
-if value2 > higher: higher = value2
-if value3 > higher: higher = value3
+biggest = value1
+if value2 > biggest: biggest = value2
+if value3 > biggest: biggest = value3
 
 smallest = value1
 if value2 < smallest: smallest = value2
 if value3 < smallest: smallest = value3
 
-middle = value1 + value2 + value3 - higher - smallest
+middle = value1 + value2 + value3 - biggest - smallest
 
-print('Ascending order: ', smallest, middle, higher)
+print('Ascending order: ', smallest, middle, biggest)
 
 #Ascending order again
 
@@ -170,7 +170,7 @@ else:
   weight = 0.5 * higher + 0.25 * (grade1 + grade2 + grade3 - higher)
   print('Weight of grade: ', weight)
 
-#Baskara
+#Bhaskara
 
 import math
 
