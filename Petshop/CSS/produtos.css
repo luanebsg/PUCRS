@@ -1,0 +1,87 @@
+/* Para garantir que o footer fique no final da tela */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flexbox para garantir que o conteúdo empurre o rodapé para o fim */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #8d6e63;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil ao texto */
+}
+/* O conteúdo principal deve crescer para ocupar o espaço restante */
+.content {
+    flex: 1;
+    margin-bottom: 50px; /* Espaço para evitar que o conteúdo encoste no rodapé */
+}
+.navbar {
+    background-color: #8d6e63;
+}
+.navbar-brand, .navbar-nav .nav-link {
+    color: #fff;
+}
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: center;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.product-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.product-description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8d6e63;
+}
+.btn-primary {
+    background-color: #8d6e63;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #795548;
+}
+.footer {
+    background-color: #8d6e63;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 12px;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - PetAddicts</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Ícones -->
+    <!--Style-->
+    <link rel="stylesheet" href="/CSS/agendamento.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">PetAddicts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="agendamento.html">Agendamento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro.html">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cart-icon" href="carrinho.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulário de Agendamento -->
+    <div class="content">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2>Agendamento de Serviços</h2>
+                    <form>
+                        <!-- Serviço -->
+                        <div class="form-group">
+                            <label for="servico">Escolha o Serviço</label>
+                            <select class="form-control" id="servico" required>
+                                <option value="">Selecione um serviço</option>
+                                <option value="consulta">Consulta Veterinária</option>
+                                <option value="banho-tosa">Banho e Tosa</option>
+                                <option value="banho">Somente Banho</option>
+                                <option value="tosa">Somente Tosa</option>
+                                <option value="vacinacao">Vacinação</option>
+                            </select>
+                        </div>
+
+                        <!-- Data -->
+                        <div class="form-group">
+                            <label for="data">Escolha a Data</label>
+                            <input type="date" class="form-control" id="data" required>
+                        </div>
+
+                        <!-- Horário -->
+                        <div class="form-group">
+                            <label for="horario">Escolha o Horário</label>
+                            <input type="time" class="form-control" id="horario" required>
+                        </div>
+
+                        <!-- Tele-busca -->
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="telebusca">
+                            <label class="form-check-label" for="telebusca">Desejo serviço de tele-busca</label>
+                        </div>
+
+                        <!-- Botão de Agendamento -->
+                        <button type="submit" class="btn btn-primary btn-block">Agendar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 PetAddicts - Todos os direitos reservados.</p>
+        <p><a href="contato.html" style="color: #ffffff;">Contato</a></p>
+    </footer>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- FontAwesome CDN para ícones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+    <!-- Script para Gerenciar o Carrinho -->
+    <script>
+        // Carregar itens do carrinho de localStorage
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItemsContainer = document.getElementById('cart-items');
+            let cartCount = document.getElementById('cart-count');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+            } else {
+                cartItemsContainer.innerHTML = '';
+                cart.forEach((item, index) => {
+                    let cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <p>${item.name}</p>
+                        <p>R$${item.price.toFixed(2)}</p>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+            }
+
+            // Atualiza a contagem de itens no ícone do carrinho
+            cartCount.textContent = cart.length;
+        }
+
+        // Carregar o carrinho quando a página carregar
+        window.onload = loadCart;
+    </script>
+
+</body>
+</html>

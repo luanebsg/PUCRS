@@ -1,0 +1,150 @@
+            /* Para garantir que o footer fique no final da tela */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Flexbox para garantir que o conteúdo empurre o rodapé para o fim */
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        /* O conteúdo principal deve crescer para ocupar o espaço restante */
+        .content {
+            flex: 1;
+            margin-bottom: 50px; /* Espaço para evitar que o conteúdo encoste no rodapé */
+        }
+
+        .navbar {
+            background-color: #8d6e63;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        /* Banner */
+        .banner {
+            background: url('https://images.wagwalkingweb.com/media/daily_wag/sense_guides/hero/1534225352.3/Can-Dogs-Not-Eat-Meat.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            color: #795548;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        /* Seção de Produtos em Destaque */
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8d6e63;
+        }
+
+        /* Estilo dos botões */
+        .btn-primary {
+            background-color: #8d6e63;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #795548;
+        }
+
+        /* Estilização das seções "Nossos Serviços" e "Nossos Produtos" */
+        h2 {
+            font-size: 32px;
+            color: #8d6e63;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #8d6e63;
+            padding-bottom: 10px;
+        }
+
+        .services {
+            background-color: #f2f2f2;
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services ul li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .services ul li i {
+            font-size: 24px;
+            color: #8d6e63;
+            margin-right: 10px;
+        }
+
+        .services p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .products {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .products p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #8d6e63;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ffd54f;
+        }

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetAddicts - Home</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Ícones -->
+    <!--Style-->
+    <link rel="stylesheet" href="/CSS/index.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">PetAddicts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="agendamento.html">Agendamento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" id="login-link">Login</a>
+                </li>
+                <li class="nav-item" id="cadastro-link">
+                    <a class="nav-link" href="cadastro.html">Cadastro</a>
+                </li>
+                <li class="nav-item" id="logout-link" style="display: none;">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cart-icon" href="carrinho.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Banner -->
+        <section class="banner">
+            <h1>Bem-vindo à PetAddicts</h1>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <div class="container my-5">
+            <h2>Produtos em Destaque</h2>
+            <div class="row">
+                <!-- Produto 1 -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://multitreco.com/cdn/shop/files/S542d95a0875c47f4921e681ec79b3443X_800x.jpg?v=1720454654" alt="Caminha Deluxe">
+                        <div class="product-title">Caminha Deluxe</div>
+                        <div class="product-price">R$230</div>
+                        <button class="btn btn-primary" onclick="addToCart('Caminha Deluxe', 230)">Comprar</button>
+                    </div>
+                </div>
+                <!-- Produto 3 -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_956417-MLB70212223212_062023-O.webp" alt="Engana Gato">
+                        <div class="product-title">Engana Gato</div>
+                        <div class="product-price">R$55</div>
+                        <button class="btn btn-primary" onclick="addToCart('Engana Gato', 55)">Comprar</button>
+                    </div>
+                </div>
+                <!-- Produto 5 -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://a-static.mlcdn.com.br/450x450/pote-para-racao-e-agua-tigela-inox-300ml-para-cachorro-gato-4-unidades-western/mixthor/kit366-2/af7d32538463c14923eb2388350640b7.jpeg" alt="Pote Inox">
+                        <div class="product-title">Pote Inox</div>
+                        <div class="product-price">R$45</div>
+                        <button class="btn btn-primary" onclick="addToCart('Pote Inox', 45)">Comprar</button>
+                    </div>
+                </div>
+                <!-- Produto 8 -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://static-shop.vivapets.com/media/catalog/product/cache/11fc96e7318a291175a0004e054be56e/e/x/exa7620_7.jpg" alt="Sono Seguro">
+                        <div class="product-title">Sono Seguro</div>
+                        <div class="product-price">R$565</div>
+                        <button class="btn btn-primary" onclick="addToCart('Sono Seguro', 565)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção "Nossos Serviços" -->
+        <div class="container services my-5">
+            <h2>Nossos Serviços</h2>
+            <p>Na PetAddicts, oferecemos serviços de alta qualidade para seus pets! Desde consultas veterinárias até banho e tosa, cuidamos de seus animais com todo carinho e dedicação.</p>
+            <ul>
+                <li><i class="fas fa-stethoscope"></i> Consulta Veterinária</li>
+                <li><i class="fas fa-cut"></i> Banho e Tosa</li>
+                <li><i class="fas fa-syringe"></i> Vacinação</li>
+                <li><i class="fas fa-shuttle-van"></i> Tele-busca</li>
+            </ul>
+            <a href="agendamento.html" class="btn btn-primary">Agendar Agora</a>
+        </div>
+
+        <!-- Seção "Nossos Produtos" -->
+        <div class="container products my-5">
+            <h2>Nossos Produtos</h2>
+            <p>Além dos nossos serviços, também oferecemos uma variedade de produtos para atender todas as necessidades dos seus pets. Rações, brinquedos e muito mais!</p>
+            <a href="produtos.html" class="btn btn-secondary">Ver Produtos</a>
+        </div>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 PetAddicts - Todos os direitos reservados.</p>
+        <p><a href="contato.html" style="color: #ffffff;">Contato</a></p>
+    </footer>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para adicionar ao carrinho -->
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' foi adicionado ao carrinho!');
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        var isLoggedIn = false;
+
+        function checkLoginStatus() {
+            if (isLoggedIn) {
+                document.getElementById('cadastro-link').style.display = 'none';
+                document.getElementById('login-link').style.display = 'none';
+                document.getElementById('logout-link').style.display = 'block';
+            } else {
+                document.getElementById('cadastro-link').style.display = 'block';
+                document.getElementById('login-link').style.display = 'block';
+                document.getElementById('logout-link').style.display = 'none';
+            }
+        }
+
+        function logout() {
+            isLoggedIn = false;
+            alert('Você saiu!');
+            checkLoginStatus();
+        }
+
+        window.onload = function() {
+            checkLoginStatus();
+            updateCartCount();
+        };
+    </script>
+
+</body>
+</html>
